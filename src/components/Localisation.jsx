@@ -34,12 +34,11 @@ export default function Localisation() {
         <h2 className="section-title" style={{ color: 'var(--noir)' }}>Notre Boutique</h2>
       </div>
 
-      <div style={s.wrapper}>
-        <div className="loc-map" style={s.mapWrap}>
+      <div className="loc-wrapper">
+        <div className="loc-map">
           <iframe
             title="Yashba Luxe — Localisation"
             src={EMBED_URL}
-            style={s.iframe}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -156,11 +156,25 @@ body {
 
 .loc-wrapper {
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 400px;
   gap: 0;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 48px;
+}
+.loc-map {
+  position: relative;
+  overflow: hidden;
+  filter: grayscale(0.3) contrast(1.05);
+  min-height: 420px;
+}
+.loc-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  position: absolute;
+  inset: 0;
 }
 
 /* ── Tablet ≤ 1024px ── */
@@ -176,6 +190,7 @@ body {
   .section-header { padding: 60px 32px 40px; }
   .grid-cmd { padding: 0 32px; }
   .loc-wrapper { grid-template-columns: 1fr; padding: 0 32px; }
+  .loc-map { min-height: 360px; }
 }
 
 /* ── Mobile ≤ 640px ── */
@@ -234,4 +249,5 @@ body {
   footer { padding: 48px 20px 28px !important; }
   .cmd-section { padding: 72px 20px !important; }
   .loc-wrapper { padding: 0 16px; }
+  .loc-map { min-height: 280px; }
 }
