@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fond noir -->
+  <rect width="64" height="64" fill="#0a0a0a"/>
+
+  <!-- Bordure or fine -->
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+
+  <!-- Lettre Y -->
+  <path d="M8 10 L22 31 L22 54 L27 54 L27 31 L41 10 L35 10 L24.5 26 L14 10 Z" fill="#C9A84C"/>
+
+  <!-- Lettre L -->
+  <path d="M33 10 L33 54 L56 54 L56 49 L38 49 L38 10 Z" fill="#C9A84C"/>
+
+  <!-- Barre diagonale signature -->
+  <line x1="37" y1="6" x2="29" y2="58" stroke="#0a0a0a" stroke-width="3"/>
+</svg>
