@@ -32,7 +32,7 @@ export default function BrumesSection() {
 
       <div style={s.subheader}>
         <p style={s.subCat}>Home Fragrances</p>
-        <p style={s.subPrice}>8 000 FCFA · Sprays d'ambiance 200ml · Design élégant noir et or</p>
+        <p style={s.subPrice}>10 000 FCFA · Sprays d'ambiance 200ml · Design élégant noir et or</p>
       </div>
       <div className="grid-brume-home">
         {homeFragrances.map(b => <BrumeCard key={b.id} brume={b} />)}

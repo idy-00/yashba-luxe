@@ -116,7 +116,7 @@ const s = {
     textTransform: 'uppercase',
     lineHeight: 1,
     marginBottom: 16,
-    color: '#fff',
+    color: 'var(--or)',
   },
   sub: {
     fontFamily: 'var(--serif)',

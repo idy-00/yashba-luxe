@@ -102,8 +102,9 @@ const styles = {
     textDecoration: 'none', lineHeight: 1, gap: 4,
   },
   logoYL: {
-    fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 600,
+    fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 700,
     letterSpacing: '4px', color: 'var(--or)',
+    textShadow: '0 0 20px rgba(201,168,76,0.4)',
   },
   logoSub: {
     fontSize: 9, letterSpacing: '3px', color: 'rgba(255,255,255,0.4)',

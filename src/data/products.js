@@ -111,7 +111,7 @@ export const brumes = [
     type: 'Home Fragrance · 200ml',
     desc: 'Spray d\'ambiance au design élégant noir et or. Transformez votre intérieur en havre de luxe avec une diffusion longue durée aux notes chaudes et enveloppantes.',
     notes: 'Ambre chaud · Santal · Jasmin · Musc blanc',
-    price: '8 000 FCFA',
+    price: '10 000 FCFA',
     img: '/WhatsApp Image 2026-06-05 at 10.45.18 PM.jpeg',
   },
   {
@@ -120,7 +120,7 @@ export const brumes = [
     type: 'Home Fragrance · 200ml',
     desc: 'Spray d\'ambiance au design élégant noir et or. Le Souffle Royal apporte une touche de majesté à votre demeure avec ses notes boisées et musquées créant une atmosphère de prestige.',
     notes: 'Bois précieux · Musc royal · Encens doux · Ambre',
-    price: '8 000 FCFA',
+    price: '10 000 FCFA',
     img: '/WhatsApp Image 2026-06-05 at 10.45.18 PM (1).jpeg',
   },
   {
