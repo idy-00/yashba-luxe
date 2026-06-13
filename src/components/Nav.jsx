@@ -39,7 +39,9 @@ export default function Nav() {
         </ul>
 
         <a href="#hero" style={styles.logo}>
-          <span style={styles.logoYL}>YL</span>
+          <span style={styles.logoYL}>
+            <span style={styles.logoY}>Y</span><span style={styles.logoL}>L</span>
+          </span>
           <span style={styles.logoSub}>Yashba Luxe</span>
         </a>
 
@@ -65,6 +67,9 @@ export default function Nav() {
             <a key={label} href={href} style={styles.mobileLink} onClick={closeMenu}>{label}</a>
           )
         })}
+        <a href="https://wa.me/221774291571" target="_blank" rel="noreferrer" style={{ ...styles.mobileCta, marginBottom: 8 }}>
+          Commander · 77 429 15 71
+        </a>
         <a href="https://wa.me/221776558929" target="_blank" rel="noreferrer" style={styles.mobileCta}>
           Commander sur WhatsApp
         </a>
@@ -103,8 +108,17 @@ const styles = {
   },
   logoYL: {
     fontFamily: 'var(--serif)', fontSize: 28, fontWeight: 700,
-    letterSpacing: '4px', color: 'var(--or)',
+    letterSpacing: '0px', color: 'var(--or)',
     textShadow: '0 0 20px rgba(201,168,76,0.4)',
+    display: 'inline-flex', alignItems: 'flex-end', gap: 0,
+  },
+  logoY: {
+    display: 'inline-block',
+    position: 'relative',
+    top: '-5px',
+  },
+  logoL: {
+    display: 'inline-block',
   },
   logoSub: {
     fontSize: 9, letterSpacing: '3px', color: 'rgba(255,255,255,0.4)',
