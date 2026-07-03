@@ -70,7 +70,7 @@ export default function Nav() {
         <a href="https://wa.me/221774291571" target="_blank" rel="noreferrer" style={{ ...styles.mobileCta, marginBottom: 8 }}>
           Commander · 77 429 15 71
         </a>
-        <a href="https://wa.me/221776558929" target="_blank" rel="noreferrer" style={styles.mobileCta}>
+        <a href="https://wa.me/221776558920" target="_blank" rel="noreferrer" style={styles.mobileCta}>
           Commander sur WhatsApp
         </a>
       </div>

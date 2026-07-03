@@ -45,7 +45,7 @@ export default function Commander() {
         ))}
       </div>
       <div className="cmd-btns" style={s.btns}>
-        <a href="https://wa.me/221776558929" target="_blank" rel="noreferrer" style={s.wa}>
+        <a href="https://wa.me/221776558920" target="_blank" rel="noreferrer" style={s.wa}>
           <WaIcon />
           WhatsApp · 77 655 89 20
         </a>

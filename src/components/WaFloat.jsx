@@ -17,7 +17,7 @@ export default function WaFloat() {
   return (
     <a
       ref={btnRef}
-      href="https://wa.me/221776558929"
+      href="https://wa.me/221776558920"
       target="_blank"
       rel="noreferrer"
       style={s.btn}
