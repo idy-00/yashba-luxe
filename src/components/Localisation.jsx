@@ -58,7 +58,8 @@ export default function Localisation() {
 
           <div style={s.infoBlock}>
             <span className="eyebrow" style={{ color: 'var(--or)' }}>Contact</span>
-            <a href="tel:+221776558929" style={s.tel}>+221 77 655 89 29</a>
+            <a href="tel:+221776558920" style={s.tel}>+221 77 655 89 20</a>
+            <a href="tel:+221774291571" style={s.tel}>+221 77 429 15 71</a>
           </div>
 
           <div style={s.infoBlock}>

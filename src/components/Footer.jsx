@@ -2,7 +2,8 @@ import { FaInstagram, FaWhatsapp, FaTiktok, FaSnapchatGhost } from 'react-icons/
 
 const socials = [
   { Icon: FaInstagram, href: 'https://www.instagram.com/yashba_luxe_/', label: 'Instagram' },
-  { Icon: FaWhatsapp, href: 'https://wa.me/221776558929', label: 'WhatsApp' },
+  { Icon: FaWhatsapp, href: 'https://wa.me/221776558920', label: 'WhatsApp 1' },
+  { Icon: FaWhatsapp, href: 'https://wa.me/221774291571', label: 'WhatsApp 2' },
   { Icon: FaTiktok, href: 'https://www.tiktok.com/@yashbaa.luxe', label: 'TikTok' },
   { Icon: FaSnapchatGhost, href: 'https://snapchat.com/t/fSsFP6Ut', label: 'Snapchat' },
 ]
@@ -17,7 +18,8 @@ export default function Footer() {
           <p style={s.address}>
             Sacré-Cœur 3, derrière Pharmacie VDN<br />
             Dakar, Sénégal<br /><br />
-            <a href="tel:+221776558929" style={s.tel}>+221 77 655 89 29</a>
+            <a href="tel:+221776558920" style={s.tel}>+221 77 655 89 20</a><br />
+            <a href="tel:+221774291571" style={s.tel}>+221 77 429 15 71</a>
           </p>
           <div style={s.socialsWrap}>
             {socials.map(sc => (

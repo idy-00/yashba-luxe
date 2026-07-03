@@ -47,7 +47,11 @@ export default function Commander() {
       <div className="cmd-btns" style={s.btns}>
         <a href="https://wa.me/221776558929" target="_blank" rel="noreferrer" style={s.wa}>
           <WaIcon />
-          Commander sur WhatsApp
+          WhatsApp · 77 655 89 20
+        </a>
+        <a href="https://wa.me/221774291571" target="_blank" rel="noreferrer" style={s.wa}>
+          <WaIcon />
+          WhatsApp · 77 429 15 71
         </a>
         <a href="https://www.instagram.com/yashba_luxe_/" target="_blank" rel="noreferrer" style={s.insta}>
           <InstaIcon />
