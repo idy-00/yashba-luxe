@@ -38,7 +38,7 @@ export default function FeatureProduct({ imgSrc, imgAlt, eyebrow, name, desc, no
       <h2 className="section-title" style={{ color: textColor }}>{name}</h2>
       <div className="gold-rule" />
       <p style={{ ...s.desc, color: bodyColor }}>{desc}</p>
-      <div style={s.notesGrid}>
+      <div className="feature-notes-grid" style={s.notesGrid}>
         {notes.map(n => (
           <div key={n.label} style={s.noteItem}>
             <p style={s.noteLabel}>{n.label}</p>

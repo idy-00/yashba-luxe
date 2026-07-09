@@ -56,7 +56,7 @@ export default function Hero() {
 
       <div ref={contentRef} style={s.content}>
         <span className="hero-eyebrow" style={s.eyebrow}>Collection Premium 2025</span>
-        <h1 ref={titleRef} style={s.title}>Yashba Luxe</h1>
+        <h1 ref={titleRef} className="hero-title" style={s.title}>Yashba Luxe</h1>
         <p ref={subRef} style={s.sub}>« Là où chaque fragrance raconte une histoire »</p>
         <a ref={ctaRef} href="#parfums-femme" className="btn-outline">Découvrir la collection</a>
       </div>

@@ -151,7 +151,7 @@ export default function BrumesSection() {
         <h2 className="section-title" style={{ color: 'var(--noir)' }}>Brumes & Ambiances</h2>
       </div>
 
-      <div style={s.subheader}>
+      <div className="brume-subheader" style={s.subheader}>
         <p style={s.subCat}>Home Fragrances</p>
         <p style={s.subPrice}>10 000 FCFA · Sprays d'ambiance 200ml · Design élégant noir et or</p>
       </div>
@@ -159,7 +159,7 @@ export default function BrumesSection() {
         <HomeFragranceRow key={b.id} brume={b} index={i} />
       ))}
 
-      <div style={s.subheader}>
+      <div className="brume-subheader" style={s.subheader}>
         <p style={s.subCat}>Brumes Corporelles · 100ml</p>
         <p style={s.subPrice}>8 000 FCFA</p>
       </div>
@@ -169,7 +169,7 @@ export default function BrumesSection() {
         </div>
         <div style={s.sweetContent}>
           {sweetMists.map((b, i) => (
-            <div key={b.id} style={{ ...s.sweetItem, borderTop: i > 0 ? '1px solid rgba(201,168,76,0.15)' : 'none' }}>
+            <div key={b.id} className="sweet-item" style={{ ...s.sweetItem, borderTop: i > 0 ? '1px solid rgba(201,168,76,0.15)' : 'none' }}>
               <p style={s.type}>{b.type}</p>
               <h3 style={s.sweetName}>{b.name}</h3>
               <p style={s.sweetDesc}>{b.desc}</p>

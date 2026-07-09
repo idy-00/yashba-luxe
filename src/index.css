@@ -251,20 +251,46 @@ body {
   .loc-wrapper { padding: 0 16px; }
   .loc-map { min-height: 280px; }
 
+  /* Home Fragrances */
   .home-fragrance-row { flex-direction: column !important; height: auto !important; }
   .home-fragrance-row--reverse { flex-direction: column !important; }
   .home-fragrance-row > div:first-child { flex: none !important; width: 100% !important; height: 280px !important; }
   .home-fragrance-row > div:last-child { flex: none !important; width: 100% !important; padding: 32px 20px !important; }
 
+  /* Sweet Vanilla / Candy */
   .sweet-block { flex-direction: column !important; margin: 0 16px !important; }
   .sweet-block > div:first-child { flex: none !important; width: 100% !important; height: 280px !important; }
   .sweet-block > div:last-child { flex: none !important; width: 100% !important; }
+  .sweet-item { padding: 28px 20px !important; }
 
+  /* Huiles */
   .huiles-block { flex-direction: column !important; }
   .huiles-block > div:first-child { flex: none !important; width: 100% !important; min-height: 260px !important; }
   .huiles-block > div:last-child { flex: none !important; width: 100% !important; padding: 36px 20px !important; }
 
+  /* Coffret */
   .coffret-main { flex-direction: column !important; margin: 0 16px !important; }
   .coffret-main > div:first-child { flex: none !important; width: 100% !important; height: 260px !important; aspect-ratio: unset !important; }
   .coffret-main > div:last-child { flex: none !important; width: 100% !important; padding: 32px 20px !important; }
+
+  /* Hero titre */
+  .hero-title { letter-spacing: 4px !important; font-size: clamp(44px, 12vw, 72px) !important; }
+
+  /* Bouton hero */
+  .btn-outline { padding: 14px 24px !important; }
+
+  /* Commander boutons */
+  .cmd-btns a { padding: 18px 20px !important; width: 100%; justify-content: center; box-sizing: border-box; }
+
+  /* Localisation info */
+  .loc-info { padding: 40px 20px !important; }
+
+  /* FeatureProduct notes grid */
+  .feature-notes-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+  /* Sections padding bottom */
+  #parfums-femme, #parfums-homme, #brumes, #autres, #coffrets { padding-bottom: 44px !important; }
+
+  /* Brumes sous-titres */
+  .brume-subheader { padding: 24px 20px 12px !important; }
 }
