@@ -56,15 +56,15 @@ export default function App() {
         dark
       />
       <FeatureProduct
-        imgSrc="/WhatsApp Image 2026-06-05 at 10.45.26 PM (2).jpeg"
-        imgAlt="Bacar Suprême"
-        eyebrow="Le Best-Seller Masculin"
-        name="Bacar Suprême"
-        desc="Depuis son lancement, Bacar Suprême s'impose comme la référence masculine de Yashba Luxe. Son équilibre parfait entre puissance et élégance en fait l'allié indispensable de l'homme qui veut marquer chaque occasion."
+        imgSrc="/mouhamed-sultan.jpeg"
+        imgAlt="Mouhamed Sultan"
+        eyebrow="Parfum d'Homme"
+        name="Mouhamed Sultan"
+        desc="Yashba Luxe incarne la rencontre entre fraîcheur vibrante, élégance florale et profondeur orientale. Un parfum sophistiqué et puissant, à la fois moderne et intemporel."
         notes={[
-          { label: 'Tête', value: 'Bergamote\nPoivre rose' },
-          { label: 'Cœur', value: 'Bois de gaïac\nCuir fumé' },
-          { label: 'Fond', value: 'Oud sombre\nAmbre gris' },
+          { label: 'Tête', value: 'Bergamote, Citron\nPoivre rose' },
+          { label: 'Cœur', value: 'Jasmin, Rose\nEncens, Géranium' },
+          { label: 'Fond', value: 'Ambre gris, Santal\nMusc, Patchouli\nFève tonka, Vanille' },
         ]}
         price="35 000 FCFA · Extrait de Parfum 50ml"
         light

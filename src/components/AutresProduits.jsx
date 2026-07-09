@@ -25,15 +25,6 @@ const IconBruleParfum = () => (
   </svg>
 )
 
-const IconHuile = () => (
-  <svg viewBox="0 0 60 110" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="110">
-    <rect x="26" y="6" width="8" height="18" rx="1.5" stroke="#C9A84C" strokeWidth="1.2" fill="none"/>
-    <rect x="22" y="22" width="16" height="5" rx="1" fill="#C9A84C" opacity="0.4"/>
-    <rect x="12" y="27" width="36" height="74" rx="5" stroke="#C9A84C" strokeWidth="1.2" fill="none"/>
-    <text x="30" y="74" fontFamily="Georgia,serif" fontSize="10" fontWeight="600" fill="#C9A84C" textAnchor="middle" letterSpacing="1">YL</text>
-  </svg>
-)
-
 const IconEncens = () => (
   <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="110">
     <path d="M32 42 Q34 30 32 20 Q30 12 34 6" stroke="#C9A84C" strokeWidth="1.3" fill="none" strokeLinecap="round" opacity="0.6"/>
@@ -59,13 +50,6 @@ const items = [
     Icon: IconBruleParfum,
   },
   {
-    name: 'Huiles Parfumées',
-    tag: 'Soin & Parfum',
-    desc: 'La fragrance à l\'état pur. Application directe ou diffuseur.',
-    price: '2 000 – 9 000 FCFA',
-    Icon: IconHuile,
-  },
-  {
     name: 'Pots d\'Encens',
     tag: 'Rituel olfactif',
     desc: 'Ornés du logo YL doré. Luxe africain pour votre quotidien.',
@@ -86,6 +70,10 @@ export default function AutresProduits() {
       onEnter: els => gsap.from(els, { y: 32, opacity: 0, duration: 0.75, stagger: 0.1, ease: 'power3.out' }),
       start: 'top 88%', once: true,
     })
+    gsap.from('.huiles-block', {
+      y: 32, opacity: 0, duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: '.huiles-block', start: 'top 85%' },
+    })
   }, { scope: sectionRef })
 
   return (
@@ -95,7 +83,7 @@ export default function AutresProduits() {
         <h2 className="section-title" style={{ color: '#fff' }}>Bougies & Accessoires</h2>
       </div>
 
-      <div className="grid-cards-4" style={s.grid}>
+      <div className="grid-cards-3" style={s.grid}>
         {items.map(item => (
           <div key={item.name} className="autre-card" style={s.card}>
             <div style={s.iconWrap}>
@@ -110,6 +98,31 @@ export default function AutresProduits() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="huiles-block" style={s.huilesWrap}>
+        <div style={s.huilesImg}>
+          <img src="/huiles-parfum.jpeg" alt="Huiles de Parfum Yashba Luxe" style={s.huilesPhoto} loading="lazy" />
+        </div>
+        <div style={s.huilesContent}>
+          <span style={s.tag}>Soin & Parfum</span>
+          <h3 style={s.huilesTitle}>Huiles de Parfum</h3>
+          <div style={s.rule} />
+          <p style={s.huilesDesc}>La fragrance à l'état pur. Trois essences exclusives à appliquer directement sur la peau ou en diffuseur pour un sillage intense et durable.</p>
+          <div style={s.huilesGrid}>
+            {[
+              { name: 'Musc Vanillé', desc: 'Douceur et sensualité. L\'alliance parfaite du musc et de la vanille.' },
+              { name: 'Oud Rouge', desc: 'Intensité et élégance. Un oud profond sublimé par des notes chaudes et épicées.' },
+              { name: 'Musc Blanc', desc: 'Pureté et raffinement. Un musc délicat aux notes propres et enveloppantes.' },
+            ].map(h => (
+              <div key={h.name} style={s.huilesItem}>
+                <p style={s.huilesName}>{h.name}</p>
+                <p style={s.huilesItemDesc}>{h.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={s.price}>2 000 – 9 000 FCFA</p>
+        </div>
       </div>
     </section>
   )
@@ -127,15 +140,8 @@ const s = {
     borderTop: '1px solid rgba(201,168,76,0.12)',
     textAlign: 'center',
   },
-  iconWrap: {
-    marginBottom: 36,
-    opacity: 0.85,
-  },
-  info: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
+  iconWrap: { marginBottom: 36, opacity: 0.85 },
+  info: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
   tag: {
     fontSize: 10,
     letterSpacing: '3px',
@@ -153,23 +159,35 @@ const s = {
     lineHeight: 1.2,
     marginBottom: 0,
   },
-  rule: {
-    width: 32,
-    height: 1,
-    background: 'var(--or)',
-    margin: '16px auto',
-    opacity: 0.6,
+  rule: { width: 32, height: 1, background: 'var(--or)', margin: '16px auto', opacity: 0.6 },
+  desc: { fontSize: 13, lineHeight: 1.75, color: 'rgba(255,255,255,0.45)', marginBottom: 20 },
+  price: { fontFamily: 'var(--serif)', fontSize: 18, color: 'var(--or)', fontWeight: 400 },
+  huilesWrap: {
+    display: 'flex',
+    marginTop: 2,
+    background: '#111',
+    borderTop: '1px solid rgba(201,168,76,0.12)',
   },
-  desc: {
-    fontSize: 13,
-    lineHeight: 1.75,
-    color: 'rgba(255,255,255,0.45)',
-    marginBottom: 20,
+  huilesImg: { flex: '0 0 45%', overflow: 'hidden', minHeight: 400 },
+  huilesPhoto: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
+  huilesContent: {
+    flex: 1,
+    padding: '60px 56px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
-  price: {
+  huilesTitle: {
     fontFamily: 'var(--serif)',
-    fontSize: 18,
-    color: 'var(--or)',
+    fontSize: 'clamp(24px, 2vw, 36px)',
     fontWeight: 400,
+    color: '#fff',
+    lineHeight: 1.2,
+    marginBottom: 0,
   },
+  huilesDesc: { fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.55)', marginBottom: 28 },
+  huilesGrid: { display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 28 },
+  huilesItem: { borderLeft: '2px solid rgba(201,168,76,0.4)', paddingLeft: 16 },
+  huilesName: { fontFamily: 'var(--serif)', fontSize: 15, color: 'var(--or)', marginBottom: 4 },
+  huilesItemDesc: { fontSize: 12, lineHeight: 1.6, color: 'rgba(255,255,255,0.4)' },
 }
