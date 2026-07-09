@@ -253,6 +253,18 @@ body {
 
   .home-fragrance-row { flex-direction: column !important; height: auto !important; }
   .home-fragrance-row--reverse { flex-direction: column !important; }
-  .home-fragrance-row > div:first-child { flex: none !important; width: 100% !important; height: 260px !important; }
+  .home-fragrance-row > div:first-child { flex: none !important; width: 100% !important; height: 280px !important; }
   .home-fragrance-row > div:last-child { flex: none !important; width: 100% !important; padding: 32px 20px !important; }
+
+  .sweet-block { flex-direction: column !important; margin: 0 16px !important; }
+  .sweet-block > div:first-child { flex: none !important; width: 100% !important; height: 280px !important; }
+  .sweet-block > div:last-child { flex: none !important; width: 100% !important; }
+
+  .huiles-block { flex-direction: column !important; }
+  .huiles-block > div:first-child { flex: none !important; width: 100% !important; min-height: 260px !important; }
+  .huiles-block > div:last-child { flex: none !important; width: 100% !important; padding: 36px 20px !important; }
+
+  .coffret-main { flex-direction: column !important; margin: 0 16px !important; }
+  .coffret-main > div:first-child { flex: none !important; width: 100% !important; height: 260px !important; aspect-ratio: unset !important; }
+  .coffret-main > div:last-child { flex: none !important; width: 100% !important; padding: 32px 20px !important; }
 }
