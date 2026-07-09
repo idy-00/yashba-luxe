@@ -250,4 +250,9 @@ body {
   .cmd-section { padding: 72px 20px !important; }
   .loc-wrapper { padding: 0 16px; }
   .loc-map { min-height: 280px; }
+
+  .home-fragrance-row { flex-direction: column !important; height: auto !important; }
+  .home-fragrance-row--reverse { flex-direction: column !important; }
+  .home-fragrance-row > div:first-child { flex: none !important; width: 100% !important; height: 260px !important; }
+  .home-fragrance-row > div:last-child { flex: none !important; width: 100% !important; padding: 32px 20px !important; }
 }
