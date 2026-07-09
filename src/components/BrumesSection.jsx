@@ -195,8 +195,8 @@ function HomeFragranceRow({ brume, index }) {
   return (
     <div
       ref={rowRef}
-      className="brume-card"
-      style={{ ...s.homeRow, flexDirection: imgLeft ? 'row' : 'row-reverse' }}
+      className={`brume-card home-fragrance-row${imgLeft ? '' : ' home-fragrance-row--reverse'}`}
+      style={s.homeRow}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
@@ -232,6 +232,7 @@ const s = {
   price: { fontFamily: 'var(--serif)', fontSize: 18, color: 'var(--or)', fontWeight: 400 },
   homeRow: {
     display: 'flex',
+    flexDirection: 'row',
     width: '100%',
     height: 400,
   },
