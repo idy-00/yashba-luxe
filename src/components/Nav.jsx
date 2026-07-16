@@ -61,7 +61,7 @@ export default function Nav() {
 
       <div className={`nav-mobile-menu${menuOpen ? ' open' : ''}`}>
         <button onClick={closeMenu} style={styles.closeBtn} aria-label="Fermer">✕</button>
-        {['#parfums-femme:Femme','#parfums-homme:Homme','#brumes:Brumes','#autres:Accessoires','#coffrets:Coffrets','#commander:Commander'].map(item => {
+        {['#parfums-femme:Femme','#parfums-homme:Homme','#brumes:Brumes','#autres:Accessoires','#diffuseurs:Diffuseurs','#coffrets:Coffrets','#commander:Commander'].map(item => {
           const [href, label] = item.split(':')
           return (
             <a key={label} href={href} style={styles.mobileLink} onClick={closeMenu}>{label}</a>

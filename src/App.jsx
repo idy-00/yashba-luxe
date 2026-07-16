@@ -7,6 +7,7 @@ import FeatureProduct from './components/FeatureProduct'
 import Citation from './components/Citation'
 import BrumesSection from './components/BrumesSection'
 import AutresProduits from './components/AutresProduits'
+import DiffuseursSection from './components/DiffuseursSection'
 import Coffrets from './components/Coffrets'
 import Commander from './components/Commander'
 import Localisation from './components/Localisation'
@@ -74,6 +75,7 @@ export default function App() {
       <BrumesSection />
       <div className="gold-divider" />
       <AutresProduits />
+      <DiffuseursSection />
       <Coffrets />
       <Commander />
       <Localisation />
