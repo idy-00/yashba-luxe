@@ -307,6 +307,7 @@ body {
   .diff-split { padding: 0 32px; }
   .diff-card--left { padding-right: 24px; }
   .diff-card--right { padding-left: 24px; }
+  .grid-nouvelles-brumes { grid-template-columns: repeat(2, 1fr) !important; padding: 0 32px !important; gap: 16px !important; }
 }
 
 /* ── Mobile ≤ 640px ── */
@@ -434,4 +435,7 @@ body {
 
   /* Brumes sous-titres */
   .brume-subheader { padding: 24px 20px 12px !important; }
+
+  /* Brumes mobile */
+  .grid-nouvelles-brumes { grid-template-columns: repeat(2, 1fr) !important; padding: 0 16px !important; gap: 10px !important; }
 }

@@ -123,6 +123,15 @@ function ParticleCanvas({ theme }) {
   )
 }
 
+const nouvellesBrumes = [
+  { id: 'rosee', name: 'Rosée', img: '/brume-rosee.jpeg', base: 'À base de rose' },
+  { id: 'voile-de-musc', name: 'Voile de Musc', img: '/brume-voile-de-musc.jpeg', base: 'À base de musc' },
+  { id: 'coco-aura', name: 'Coco Aura', img: '/brume-coco-aura.jpeg', base: 'À base de coco' },
+  { id: 'douce-vie', name: 'Douce Vie', img: '/brume-douce-vie.jpeg', base: 'Douceur & fraîcheur' },
+  { id: 'hawai', name: 'Hawaï', img: '/brume-hawai.jpeg', base: 'À base de lavande' },
+  { id: 'aurea', name: 'Auréa', img: '/brume-aurea.jpeg', base: 'À base de vanille' },
+]
+
 export default function BrumesSection() {
   const sectionRef = useRef(null)
 
@@ -133,6 +142,10 @@ export default function BrumesSection() {
     })
     ScrollTrigger.batch('.brume-card', {
       onEnter: (els) => gsap.from(els, { y: 36, opacity: 0, duration: 0.75, stagger: 0.1, ease: 'power3.out' }),
+      start: 'top 88%', once: true,
+    })
+    ScrollTrigger.batch('.nouvelle-brume', {
+      onEnter: (els) => gsap.from(els, { y: 44, opacity: 0, duration: 0.85, stagger: 0.1, ease: 'power3.out' }),
       start: 'top 88%', once: true,
     })
     gsap.from('.sweet-block', {
@@ -151,6 +164,7 @@ export default function BrumesSection() {
         <h2 className="section-title" style={{ color: 'var(--noir)' }}>Brumes & Ambiances</h2>
       </div>
 
+      {/* Home Fragrances */}
       <div className="brume-subheader" style={s.subheader}>
         <p style={s.subCat}>Home Fragrances</p>
         <p style={s.subPrice}>10 000 FCFA · Sprays d'ambiance 200ml · Design élégant noir et or</p>
@@ -159,7 +173,24 @@ export default function BrumesSection() {
         <HomeFragranceRow key={b.id} brume={b} index={i} />
       ))}
 
-      <div className="brume-subheader" style={s.subheader}>
+      {/* Nouvelles Brumes de Corps */}
+      <div style={s.nouvellesSection}>
+        <div style={s.nouvellesHeader}>
+          <span className="eyebrow" style={{ color: 'var(--or)' }}>Nouvelles Créations</span>
+          <h2 style={s.nouvellesTitle}>Brumes de Corps</h2>
+          <div style={s.goldRule} />
+          <p style={s.nouvellesPrice}>8 000 FCFA · 100ml</p>
+        </div>
+
+        <div className="grid-nouvelles-brumes" style={s.nouvellesGrid}>
+          {nouvellesBrumes.map((b) => (
+            <NouvellesBrumeCard key={b.id} brume={b} />
+          ))}
+        </div>
+      </div>
+
+      {/* Sweet Vanilla & Sweet Candy */}
+      <div className="brume-subheader" style={{ ...s.subheader, paddingTop: 64 }}>
         <p style={s.subCat}>Brumes Corporelles · 100ml</p>
         <p style={s.subPrice}>8 000 FCFA</p>
       </div>
@@ -180,6 +211,39 @@ export default function BrumesSection() {
         </div>
       </div>
     </section>
+  )
+}
+
+function NouvellesBrumeCard({ brume }) {
+  const cardRef = useRef(null)
+  const imgRef = useRef(null)
+
+  const onEnter = () => {
+    gsap.to(imgRef.current, { scale: 1.04, duration: 0.6, ease: 'power2.out' })
+    gsap.to(cardRef.current, { boxShadow: '0 12px 40px rgba(201,168,76,0.12)', duration: 0.4 })
+  }
+  const onLeave = () => {
+    gsap.to(imgRef.current, { scale: 1, duration: 0.6, ease: 'power2.out' })
+    gsap.to(cardRef.current, { boxShadow: '0 2px 12px rgba(0,0,0,0.04)', duration: 0.4 })
+  }
+
+  return (
+    <div
+      ref={cardRef}
+      className="nouvelle-brume"
+      style={s.nouvelleCard}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
+      <div style={s.nouvelleImgWrap}>
+        <img ref={imgRef} src={brume.img} alt={brume.name + ' — Brume de Corps Yashba Luxe'} style={s.nouvelleImg} loading="lazy" />
+      </div>
+      <div style={s.nouvelleInfo}>
+        <h3 style={s.nouvelleName}>{brume.name}</h3>
+        <p style={s.nouvelleBase}>{brume.base}</p>
+        <p style={s.nouvellePrix}>8 000 FCFA</p>
+      </div>
+    </div>
   )
 }
 
@@ -221,10 +285,101 @@ const s = {
   subheader: { textAlign: 'center', padding: '32px 48px 16px' },
   subCat: { fontSize: 10, letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--or)', marginBottom: 4 },
   subPrice: { fontFamily: 'var(--serif)', fontSize: 16, color: 'rgba(10,10,10,0.55)' },
-  card: { background: '#fff', overflow: 'hidden', border: '1px solid rgba(201,168,76,0.18)', transition: 'box-shadow 0.3s' },
-  imgWrap: { aspectRatio: '3/4', overflow: 'hidden' },
-  img: { width: '100%', height: '100%', objectFit: 'cover', display: 'block', willChange: 'transform' },
-  info: { padding: 24, color: 'var(--noir)' },
+
+  // Nouvelles brumes section
+  nouvellesSection: {
+    background: 'var(--noir)',
+    marginTop: 72,
+    padding: '80px 0',
+  },
+  nouvellesHeader: {
+    textAlign: 'center',
+    marginBottom: 52,
+  },
+  nouvellesTitle: {
+    fontFamily: 'var(--serif)',
+    fontSize: 'clamp(28px, 3.5vw, 44px)',
+    fontWeight: 400,
+    color: '#fff',
+    marginBottom: 0,
+  },
+  goldRule: {
+    width: 48,
+    height: 1,
+    background: 'var(--or)',
+    margin: '24px auto',
+    opacity: 0.7,
+  },
+  nouvellesPrice: {
+    fontFamily: 'var(--serif)',
+    fontSize: 18,
+    color: 'var(--or)',
+  },
+  nouvellesGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: 24,
+    padding: '0 48px',
+    maxWidth: 1200,
+    margin: '0 auto',
+  },
+  nouvelleCard: {
+    overflow: 'hidden',
+    background: '#1a1a1a',
+    boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+    border: '1px solid rgba(201,168,76,0.1)',
+    transition: 'box-shadow 0.4s',
+  },
+  nouvelleImgWrap: {
+    overflow: 'hidden',
+    aspectRatio: '3/4',
+  },
+  nouvelleImg: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    display: 'block',
+    willChange: 'transform',
+  },
+  nouvelleInfo: {
+    padding: '18px 20px 22px',
+    textAlign: 'center',
+  },
+  nouvelleName: {
+    fontFamily: 'var(--serif)',
+    fontSize: 20,
+    fontWeight: 400,
+    color: '#fff',
+    marginBottom: 4,
+  },
+  nouvelleBase: {
+    fontSize: 11,
+    letterSpacing: '1px',
+    color: 'rgba(255,255,255,0.5)',
+    marginBottom: 8,
+  },
+  nouvellePrix: {
+    fontFamily: 'var(--serif)',
+    fontSize: 16,
+    color: 'var(--or)',
+  },
+
+  // Sweet section
+  sweetWrap: {
+    display: 'flex',
+    margin: '0 48px',
+    border: '1px solid rgba(201,168,76,0.18)',
+    background: '#fff',
+    overflow: 'hidden',
+  },
+  sweetImg: { flex: '0 0 52%', overflow: 'hidden' },
+  sweetPhoto: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
+  sweetContent: { flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' },
+  sweetItem: { padding: '36px 40px' },
+  sweetName: { fontFamily: 'var(--serif)', fontSize: 26, fontWeight: 400, marginBottom: 10, color: 'var(--noir)' },
+  sweetDesc: { fontSize: 13, lineHeight: 1.75, color: 'rgba(10,10,10,0.58)', marginBottom: 10 },
+
+  // Shared
   type: { fontSize: 10, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'var(--or)', marginBottom: 8 },
   name: { fontFamily: 'var(--serif)', fontSize: 22, fontWeight: 400, marginBottom: 10, color: 'var(--noir)' },
   desc: { fontSize: 13, lineHeight: 1.75, color: 'rgba(10,10,10,0.58)', marginBottom: 10 },
@@ -252,17 +407,4 @@ const s = {
     justifyContent: 'center',
   },
   homeRule: { width: 40, height: 1, background: 'var(--or)', margin: '20px 0', opacity: 0.6 },
-  sweetWrap: {
-    display: 'flex',
-    margin: '0 48px',
-    border: '1px solid rgba(201,168,76,0.18)',
-    background: '#fff',
-    overflow: 'hidden',
-  },
-  sweetImg: { flex: '0 0 52%', overflow: 'hidden' },
-  sweetPhoto: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
-  sweetContent: { flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' },
-  sweetItem: { padding: '36px 40px' },
-  sweetName: { fontFamily: 'var(--serif)', fontSize: 26, fontWeight: 400, marginBottom: 10, color: 'var(--noir)' },
-  sweetDesc: { fontSize: 13, lineHeight: 1.75, color: 'rgba(10,10,10,0.58)', marginBottom: 10 },
 }
